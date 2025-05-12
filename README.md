@@ -15,6 +15,10 @@ SysMetrics is a powerful, real-time system monitoring and diagnostics tool built
 
 ---
 
+## Demo Video
+
+[Watch the video on YouTube](https://www.youtube.com/watch?v=XzjtfzKpajM)
+
 ## Getting Started
 
 SysMetrics can be run locally using a Python environment or deployed effortlessly with Docker (recommended for production).
@@ -170,6 +174,15 @@ We welcome contributions to SysMetrics! To get started:
 5. **Open a Pull Request**: Submit your changes for review.
 
 Please ensure your code adheres to the project's coding standards and includes appropriate tests.
+
+---
+
+## Collaborators
+
+- **Saud Ahmed** – _2021576_
+- **Usama Sadiq** – _2022609_
+- **Hassan Ahmed** – _2022211_
+- **Syed Faiq Haider Naqvi** – _2022562_
 
 ---
 
