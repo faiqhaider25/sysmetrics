@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysPulse Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>SysPulse - System Metrics Dashboard</h1>
+    
+    <button class="refresh-button" onclick="refreshMetrics()">Refresh Metrics</button>
+    
+    <div class="container">
+        <div class="metric-card" id="cpu">
+            <h2>CPU Usage</h2>
+            <p>Current: <span id="cpu-percent">Loading...</span>%</p>
+        </div>
+        
+        <div class="metric-card" id="memory">
+            <h2>Memory Usage</h2>
+            <p>Current: <span id="memory-percent">Loading...</span>%</p>
+            <p>Total: <span id="memory-total">Loading...</span> GB</p>
+            <p>Used: <span id="memory-used">Loading...</span> GB</p>
+            <p>Free: <span id="memory-free">Loading...</span> GB</p>
+        </div>
+        
+        <div class="metric-card" id="disk">
+            <h2>Disk Usage</h2>
+            <p>Current: <span id="disk-percent">Loading...</span>%</p>
+            <p>Total: <span id="disk-total">Loading...</span> GB</p>
+            <p>Used: <span id="disk-used">Loading...</span> GB</p>
+            <p>Free: <span id="disk-free">Loading...</span> GB</p>
+        </div>
+    </div>
+
+    <p class="timestamp">Last updated: <span id="last-update">Never</span></p>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

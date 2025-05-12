@@ -1,0 +1,235 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f5f6fa;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.refresh-button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.refresh-button:hover {
+    background-color: #2980b9;
+}
+
+.refresh-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    background-color: var(--card-background);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.metric-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.metric-details {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.metric-details div {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* System Specs Card */
+.specs-card {
+    background-color: #f0f4fb;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 6px solid var(--secondary-color);
+}
+.specs-card h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem 2rem;
+}
+.spec-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+.specs-card span[id^="spec-"] {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* Warning Banner */
+.warning-banner {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+/* Network Info Card */
+.network-card {
+    background-color: #eaf6fb;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 6px solid #00b894;
+}
+.network-card h2 {
+    color: #00b894;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.network-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem 2rem;
+}
+.network-label {
+    font-weight: 600;
+    color: #0984e3;
+    margin-right: 0.5rem;
+}
+
+/* Processes Card/Table */
+.processes-card {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 6px solid #fdcb6e;
+}
+.processes-card h2 {
+    color: #fdcb6e;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.processes-tables {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.proc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    background: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+.proc-table th, .proc-table td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+.proc-table th {
+    background: #f1f2f6;
+    color: #636e72;
+    font-weight: 700;
+}
+.proc-table tr:last-child td {
+    border-bottom: none;
+}
+@media (max-width: 900px) {
+    .processes-tables {
+        flex-direction: column;
+        gap: 1rem;
+    }
+} 

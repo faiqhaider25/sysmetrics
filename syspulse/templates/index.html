@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysPulse - System Metrics Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Warning Banner -->
+        <div id="warning-banner" class="warning-banner" style="display:none;"></div>
+        <header>
+            <h1>SysPulse - System Metrics Dashboard</h1>
+            <button class="refresh-button" onclick="refreshMetrics()">Refresh Metrics</button>
+        </header>
+        
+        <!-- System Specs Card -->
+        <div class="specs-card">
+            <h2>System Specs</h2>
+            <div class="specs-grid">
+                <div><span class="spec-label">Hostname:</span> <span id="spec-hostname">Loading...</span></div>
+                <div><span class="spec-label">OS:</span> <span id="spec-os">Loading...</span></div>
+                <div><span class="spec-label">OS Version:</span> <span id="spec-os-version">Loading...</span></div>
+                <div><span class="spec-label">CPU:</span> <span id="spec-cpu">Loading...</span></div>
+                <div><span class="spec-label">Cores:</span> <span id="spec-cores">Loading...</span></div>
+                <div><span class="spec-label">Threads:</span> <span id="spec-threads">Loading...</span></div>
+                <div><span class="spec-label">Total RAM:</span> <span id="spec-ram">Loading...</span> GB</div>
+                <div><span class="spec-label">Total Disk:</span> <span id="spec-disk">Loading...</span> GB</div>
+                <div><span class="spec-label">Uptime:</span> <span id="spec-uptime">Loading...</span></div>
+            </div>
+        </div>
+
+        <!-- Network Info Card -->
+        <div class="network-card">
+            <h2>Network Information</h2>
+            <div class="network-grid">
+                <div><span class="network-label">Private IP:</span> <span id="net-private-ip">Loading...</span></div>
+                <div><span class="network-label">Public IP:</span> <span id="net-public-ip">Loading...</span></div>
+                <div><span class="network-label">Bytes Sent:</span> <span id="net-bytes-sent">Loading...</span></div>
+                <div><span class="network-label">Bytes Received:</span> <span id="net-bytes-recv">Loading...</span></div>
+                <div><span class="network-label">Packets Sent:</span> <span id="net-packets-sent">Loading...</span></div>
+                <div><span class="network-label">Packets Received:</span> <span id="net-packets-recv">Loading...</span></div>
+                <div><span class="network-label">Active Connections:</span> <span id="net-active-conns">Loading...</span></div>
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <!-- CPU Usage -->
+            <div class="metric-card">
+                <h2>CPU Usage</h2>
+                <div class="metric-value">
+                    <span id="cpu-percent">Loading...</span>
+                </div>
+            </div>
+            
+            <!-- Memory Usage -->
+            <div class="metric-card">
+                <h2>Memory Usage</h2>
+                <div class="metric-value">
+                    <span id="memory-percent">Loading...</span>
+                </div>
+                <div class="metric-details">
+                    <div>Total: <span id="memory-total">Loading...</span> GB</div>
+                    <div>Used: <span id="memory-used">Loading...</span> GB</div>
+                    <div>Free: <span id="memory-free">Loading...</span> GB</div>
+                </div>
+            </div>
+            
+            <!-- Disk Usage -->
+            <div class="metric-card">
+                <h2>Disk Usage</h2>
+                <div class="metric-value">
+                    <span id="disk-percent">Loading...</span>
+                </div>
+                <div class="metric-details">
+                    <div>Total: <span id="disk-total">Loading...</span> GB</div>
+                    <div>Used: <span id="disk-used">Loading...</span> GB</div>
+                    <div>Free: <span id="disk-free">Loading...</span> GB</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Top Processes Table -->
+        <div class="processes-card">
+            <h2>Top Processes</h2>
+            <div>Total Processes: <span id="proc-total">Loading...</span></div>
+            <div>Top Process Uptime: <span id="proc-uptime">Loading...</span></div>
+            <div class="processes-tables">
+                <div>
+                    <h3>Top 5 by CPU</h3>
+                    <table class="proc-table">
+                        <thead><tr><th>Name</th><th>PID</th><th>CPU %</th></tr></thead>
+                        <tbody id="proc-cpu-table"></tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3>Top 5 by Memory</h3>
+                    <table class="proc-table">
+                        <thead><tr><th>Name</th><th>PID</th><th>Mem %</th></tr></thead>
+                        <tbody id="proc-mem-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Last updated: <span id="last-update">Never</span></p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', path='/app.js') }}"></script>
+</body>
+</html> 
